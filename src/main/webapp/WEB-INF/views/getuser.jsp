@@ -10,7 +10,7 @@
 <title>xss test</title>
 </head>
 <body>
-<%=StringEscapeUtils.escapeHtml3("fff") %>  ${user.userName} <br />
+${user.userName} <br />
 ${user.password} <br />
 ${user.age}
 </body>
