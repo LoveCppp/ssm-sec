@@ -56,6 +56,21 @@ public class XSSTest {
 		return "getuser1";
 	}
 	
+	/**
+	 * 使用EL自定义函数进行编码处理
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("get2")
+	public String get3(HttpServletRequest request, Model model){
+		Integer id = Integer.parseInt(request.getParameter("id"));
+
+		User user = this.userserivce.getUserById(id);
+		model.addAttribute("user", user);
+		return "getuser2";
+	}
+	
 	@RequestMapping("/add")
 	public String add(User user){
 		int i = this.userserivce.insert(user);

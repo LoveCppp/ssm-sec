@@ -2,6 +2,7 @@ package ssm.sec.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 import org.apache.log4j.Logger;
 
