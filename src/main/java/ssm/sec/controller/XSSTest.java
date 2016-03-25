@@ -25,6 +25,13 @@ public class XSSTest {
 		return "xssshow";
 	}
 	
+	
+	/**
+	 * 存在XSS的代码
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("get")
 	public String get(HttpServletRequest request, Model model){
 		Integer id = Integer.parseInt(request.getParameter("id"));
@@ -34,11 +41,27 @@ public class XSSTest {
 		return "getuser";
 	}
 	
+	/**
+	 * 使用JSTL+SPRINGMVC 进行编码处理
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("get1")
+	public String get1(HttpServletRequest request, Model model){
+		Integer id = Integer.parseInt(request.getParameter("id"));
+
+		User user = this.userserivce.getUserById(id);
+		model.addAttribute("user", user);
+		return "getuser1";
+	}
+	
 	@RequestMapping("/add")
 	public String add(User user){
 		int i = this.userserivce.insert(user);
 		return "redirect:/xsstest/show";
 	}
+	
 	
 
 
