@@ -55,28 +55,42 @@ User selectByUsername2(@Param("name")  String name);
 
 #### 测试使用#传参
 正常访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql1.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql2.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql3.png)
 
+
 加入payload访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql4.png)
+
 无结果
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql5.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql6.png)
+
 可以看到数据执行的时候已经做了转义的处理。
 
 
 #### 测试使用$传参
 正常访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql7.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql8.png)
+
 可以看到是拼接的SQL语句
 
 加入payload测试访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql9.png)
 
 依然正常访问， 已有SQL注入问题
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql10.png)
 
 在开发的过程中咱们尽量使用#传参， 减少$传参的使用， 如有需要， 也注意下出入参数的转义处理。
@@ -110,9 +124,13 @@ User selectByUsername2(@Param("name")  String name);
 插入payload测试 `toor"'><svg/onload=alert(/xss/)>`
 
 数据库里可看到并未做任何处理
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/xss1.png)
+
 查询访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/xss2.png)
+
 存在存储型XSS
 
 #### 一些安全的措施
