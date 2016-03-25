@@ -271,8 +271,11 @@ public class XSSFilter implements Filter {
 ```
 
 - 重新插入数据， 会发现已经进行了过滤处理
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/xss3.png)
+
 数据库查看都是过滤和转义的结果
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/xss4.png)
 
 > 当然有时候由于业务需要，可能允许用户输入这种危险的字符， 这种通用的并不适用， 但可以考虑把一些特殊的符号转义成中文符号，     也许也恰好能满足业务的需求， 如< 转义成 <等，看起来和英文的一样， 但由于解释器并不识别， 而又变成安全的了。
