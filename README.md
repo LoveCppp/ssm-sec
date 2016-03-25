@@ -55,13 +55,19 @@ User selectByUsername2(@Param("name")  String name);
 
 #### 测试使用#传参
 正常访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql1.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql2.png)
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql3.png)
 
 加入payload访问
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql4.png)
+
 无结果
+
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql5.png)
 ![](https://coding.net/u/b0lu/p/ssm-sec/git/raw/master/images/sql6.png)
 可以看到数据执行的时候已经做了转义的处理。
